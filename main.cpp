@@ -15,7 +15,6 @@ int main() {
     // verifica se o codigo de barras tem 13 digitos
     if (codigo < numeroMinimo13Digitos || codigo > numeroMaximo13Digitos) {
         std::cerr << "Número inválido. O número deve ter exatamente 13 dígitos." << std::endl;
-        return 1;
     }
 
     // para extrair cada digito, usamos a operação de modulo (%) para obter o ultimo digito, e dividimos o codigo por 1- para remover o ultimo digito e ir para o prximo digito
@@ -84,7 +83,7 @@ int main() {
     }
 
 
-    // soma todos so 12 primeiros digiros
+    // soma todos so 12 primeiros digitos
     int somatorioDigitos = digito1 + digito2 + digito3 + digito4 + digito5 + digito6 + digito7 + digito8 + digito9 + digito10 + digito11 + digito12;
 
     // divide a soma dos 12 primeiros digitos por 10
