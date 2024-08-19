@@ -1,90 +1,42 @@
 #include <iostream>
-
+#include <stdio.h>
 using namespace std;
 
 int main()
 {
-    // apresentacao
-    cout << "----Codigo de barra----";
-    cout << "\nDigite os codigos de barras quando for solicitado.";
-
-    // definindo dados
-    int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0, total;
-
-    cout << "\nD12: ";
-    cin >> d12;
-
-    cout << "\nD11: ";
-    cin >> d11;
-
-    cout << "\nD10: ";
-    cin >> d10;
-
-    cout << "\nD9: ";
-    cin >> d9;
-
-    cout << "\nD8: ";
-    cin >> d8;
-
-    cout << "\nD7: ";
-    cin >> d7;
-
-    cout << "\nD6: ";
-    cin >> d6;
-
-    cout << "\nD5: ";
-    cin >> d5;
-
-    cout << "\nD4: ";
-    cin >> d4;
-
-    cout << "\nD3: ";
-    cin >> d3;
-
-    cout << "\nD2: ";
-    cin >> d2;
-
-    cout << "\nD1: ";
-    cin >> d1;
-
-    cout << "\nD0: ";
-    cin >> d0;
-
-    d12 *= 1;
-    d11 *= 3;
-    d10 *= 1;
-    d9 *= 3;
-    d8 *= 1;
-    d7 *= 3;
-    d6 *= 1;
-    d5 *= 3;
-    d4 *= 1;
-    d3 *= 3;
-    d2 *= 1;
-    d1 *= 3;
-
-    total = d12 + d11 + d10 + d9 + d8 + d7 + d6 + d5 + d4 + d3 + d2 + d1;
-
-    int digito_verificador = (((total / 10) + 1) * 10) - total;
-
-    cout << "Total:\t" << total << endl;
-    cout << "Total Dividido:\t" << total / 10 << endl;
-    cout << "Total Dividido  soma 1:\t" << (total / 10) + 1 << endl;
-    cout << "Multiplicado por 10 Total Dividido soma 1:\t" << ((total / 10) + 1) * 10 << endl;
-    cout << "Digito verificador:\t" << digito_verificador << endl;
-
-    if (digito_verificador >= 10){
-        digito_verificador = 0;
+    setlocale(LC_ALL, "portuguese");
+    long long int code;
+    int dimp, dpar, dtotal, dval, d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12;
+    cout << "Insira um valor com 13 dígitos:\n";
+    cin >> code;
+    if (code >= 1000000000000 && code <= 9999999999999 ) { // Verificação de tamanho;
+        d12 = (code / 1000000000000) % 10;
+        d11 = (code / 100000000000) % 10;
+        d10 = (code / 10000000000) % 10;
+        d9 = (code / 1000000000) % 10;
+        d8 = (code / 100000000) % 10;
+        d7 = (code / 10000000) % 10;
+        d6 = (code / 1000000) % 10;
+        d5 = (code / 100000) % 10;
+        d4 = (code / 10000) % 10;
+        d3 = (code / 1000) % 10;
+        d2 = (code / 100) % 10;
+        d1 = (code / 10) % 10;
+        d0 = code % 10;
+        dimp = (d11+d9+d7+d5+d3+d1)*3;
+        dpar = d12+d10+d8+d6+d4+d2;
+        dtotal = dpar+dimp;
+        dval = dtotal/10;
+        dval = dval + 1;
+        dval = dval * 10;
+        dval = dval - d0;
+        if(dval == dtotal) {
+            cout << "O código " << code << " é válido.";
+        } else {
+            cout << "Dígito verificador inconsistente.";
+        }
+    } else {
+        cout << "Número de dígitos inválido.";
     }
-
-    if (digito_verificador == d0)
-    {
-        cout << "Sim, esta correto o codigo de barra" << endl;
-    }
-    else
-    {
-        cout << "Nao esta correto o codigo de barra" << endl;
-    }
-
     return 0;
 }
