@@ -4,87 +4,45 @@ using namespace std;
 
 int main()
 {
-    // apresentacao
-    cout << "----Codigo de barra----";
-    cout << "\nDigite os codigos de barras quando for solicitado.";
+    long long codigo_barra;
+    int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0;
 
-    // definindo dados
-    int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0, total;
+    cout << "Digite o code" << endl;
+    cin >> codigo_barra;
 
-    cout << "\nD12: ";
-    cin >> d12;
+    if (codigo_barra > 0 and codigo_barra < 9999999999999LL) {
 
-    cout << "\nD11: ";
-    cin >> d11;
+        d0 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d1 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d2 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d3 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d4 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d5 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d6 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d7 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d8 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d9 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d10 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d11 = codigo_barra % 10;
+        codigo_barra /= 10;
+        d12 = codigo_barra % 10;
 
-    cout << "\nD10: ";
-    cin >> d10;
+        cout << d0 << endl << d1 << endl<< d2 << endl<< d3 << endl<< d4 << endl<< d5 << endl<< d6 << endl<< d7 << endl<< d8 << endl<< d9 << endl<< d10 << endl << d11 << endl<< d12 << endl;
 
-    cout << "\nD9: ";
-    cin >> d9;
-
-    cout << "\nD8: ";
-    cin >> d8;
-
-    cout << "\nD7: ";
-    cin >> d7;
-
-    cout << "\nD6: ";
-    cin >> d6;
-
-    cout << "\nD5: ";
-    cin >> d5;
-
-    cout << "\nD4: ";
-    cin >> d4;
-
-    cout << "\nD3: ";
-    cin >> d3;
-
-    cout << "\nD2: ";
-    cin >> d2;
-
-    cout << "\nD1: ";
-    cin >> d1;
-
-    cout << "\nD0: ";
-    cin >> d0;
-
-    d12 *= 1;
-    d11 *= 3;
-    d10 *= 1;
-    d9 *= 3;
-    d8 *= 1;
-    d7 *= 3;
-    d6 *= 1;
-    d5 *= 3;
-    d4 *= 1;
-    d3 *= 3;
-    d2 *= 1;
-    d1 *= 3;
-
-    total = d12 + d11 + d10 + d9 + d8 + d7 + d6 + d5 + d4 + d3 + d2 + d1;
-
-    int digito_verificador = (((total / 10) + 1) * 10) - total;
-
-    cout << "Total:\t" << total << endl;
-    cout << "Total Dividido:\t" << total / 10 << endl;
-    cout << "Total Dividido  soma 1:\t" << (total / 10) + 1 << endl;
-    cout << "Multiplicado por 10 Total Dividido soma 1:\t" << ((total / 10) + 1) * 10 << endl;
-    cout << "Digito verificador:\t" << digito_verificador << endl;
-
-    if (digito_verificador >= 10){
-        digito_verificador = 0;
+    } else {
+        cout << "Número de dígitos inválidos. Deve conter ecxatamente 13 dígitos." << endl;
+        return 1;
     }
-
-    if (digito_verificador == d0)
-    {
-        cout << "Sim, esta correto o codigo de barra" << endl;
-    }
-    else
-    {
-        cout << "Nao esta correto o codigo de barra" << endl;
-    }
-
     return 0;
 }
