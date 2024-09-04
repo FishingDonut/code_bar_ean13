@@ -70,10 +70,11 @@ int main()
         int digito_verificador = (((total / 10) + 1) * 10) - total;
 
         cout << "Total:\t" << total << endl;
-        cout << "Total Dividido:\t" << total / 10 << endl;
-        cout << "Total Dividido  soma 1:\t" << (total / 10) + 1 << endl;
-        cout << "Multiplicado por 10 Total Dividido soma 1:\t" << ((total / 10) + 1) * 10 << endl;
-        cout << "Digito verificador:\t" << digito_verificador << endl;
+        cout << "Total Dividido por 10:\t" << total / 10 << endl;
+        cout << "Soma +1:\t" << (total / 10) + 1 << endl;
+        cout << "Multiplicado por 10:\t" << ((total / 10) + 1) * 10 << endl;
+        cout << "Subtraindo pelo total:\t" << (((total / 10) + 1) * 10) - total << endl;
+        cout << "Digito verificador Obtido!:\t" << digito_verificador << endl;
 
         if (digito_verificador >= 10)
         {
