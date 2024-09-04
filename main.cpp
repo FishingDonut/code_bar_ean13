@@ -10,7 +10,7 @@ int main()
     cout << "Digite o Codigo de Barras." << endl;
     cin >> codigo_barra;
 
-    if (codigo_barra > 0 and codigo_barra < 9999999999999LL) {
+    if (codigo_barra > 0 and codigo_barra <= 9999999999999LL) {
 
         d0 = codigo_barra % 10;
         codigo_barra /= 10;
@@ -38,19 +38,19 @@ int main()
         codigo_barra /= 10;
         d12 = codigo_barra % 10;
 
-        cout << d0 << endl
-             << d1 << endl
-             << d2 << endl
-             << d3 << endl
-             << d4 << endl
-             << d5 << endl
-             << d6 << endl
-             << d7 << endl
-             << d8 << endl
-             << d9 << endl
-             << d10 << endl
+        cout << d12 << endl
              << d11 << endl
-             << d12 << endl;
+             << d10 << endl
+             << d9 << endl
+             << d8 << endl
+             << d7 << endl
+             << d6 << endl
+             << d5 << endl
+             << d4 << endl
+             << d3 << endl
+             << d2 << endl
+             << d1 << endl
+             << d0 << endl;
 
         d12 *= 1;
         d11 *= 3;
