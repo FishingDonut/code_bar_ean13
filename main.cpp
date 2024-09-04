@@ -91,7 +91,7 @@ int main()
     }
     else
     {
-        cout << "Número de dígitos inválidos. Deve conter ecxatamente 13 dígitos." << endl;
+        cout << "Numero de digitos invalidos. Deve conter exatamente 13 digitos." << endl;
         return 1;
     }
     return 0;
