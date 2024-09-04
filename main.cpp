@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     long long codigo_barra;
-    int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0, total;
+    int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0, total, digito_verificador;
 
     cout << "Digite o Codigo de Barras." << endl;
     cin >> codigo_barra;
@@ -38,20 +38,6 @@ int main()
         codigo_barra /= 10;
         d12 = codigo_barra % 10;
 
-        cout << d12 << endl
-             << d11 << endl
-             << d10 << endl
-             << d9 << endl
-             << d8 << endl
-             << d7 << endl
-             << d6 << endl
-             << d5 << endl
-             << d4 << endl
-             << d3 << endl
-             << d2 << endl
-             << d1 << endl
-             << d0 << endl;
-
         d12 *= 1;
         d11 *= 3;
         d10 *= 1;
@@ -67,14 +53,11 @@ int main()
 
         total = d12 + d11 + d10 + d9 + d8 + d7 + d6 + d5 + d4 + d3 + d2 + d1;
 
-        int digito_verificador = (((total / 10) + 1) * 10) - total;
-
-        cout << "Total:\t" << total << endl;
-        cout << "Total Dividido por 10:\t" << total / 10 << endl;
-        cout << "Soma +1:\t" << (total / 10) + 1 << endl;
-        cout << "Multiplicado por 10:\t" << ((total / 10) + 1) * 10 << endl;
-        cout << "Subtraindo pelo total:\t" << (((total / 10) + 1) * 10) - total << endl;
-        cout << "Digito verificador Obtido!:\t" << digito_verificador << endl;
+        digito_verificador = total;
+        digito_verificador /= 10;
+        digito_verificador += 1;
+        digito_verificador *= 10;
+        digito_verificador -= total;
 
         if (digito_verificador >= 10)
         {
