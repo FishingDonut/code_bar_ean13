@@ -12,7 +12,6 @@ int main()
 
     if (codigo_barra > 0 and codigo_barra <= 9999999999999LL)
     {
-
         d0 = codigo_barra % 10;
         codigo_barra /= 10;
         d1 = codigo_barra % 10;
