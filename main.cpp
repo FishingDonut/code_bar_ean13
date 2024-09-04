@@ -82,16 +82,16 @@ int main()
 
         if (digito_verificador == d0)
         {
-            cout << "Sim, esta correto o codigo de barra" << endl;
+            cout << "Código de barras correto." << endl;
         }
         else
         {
-            cout << "Nao esta correto o codigo de barra" << endl;
+            cout << "Digito verificador inconsistente." << endl;
         }
     }
     else
     {
-        cout << "Numero de digitos invalidos. Deve conter exatamente 13 digitos." << endl;
+        cout << "Numero de digitos invalidos." << endl;
         return 1;
     }
     return 0;
