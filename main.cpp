@@ -82,7 +82,7 @@ int main()
 
         if (digito_verificador == d0)
         {
-            cout << "Código de barras correto." << endl;
+            cout << "Codigo de barras correto." << endl;
         }
         else
         {
