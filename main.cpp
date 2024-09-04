@@ -10,7 +10,8 @@ int main()
     cout << "Digite o Codigo de Barras." << endl;
     cin >> codigo_barra;
 
-    if (codigo_barra > 0 and codigo_barra <= 9999999999999LL) {
+    if (codigo_barra > 0 and codigo_barra <= 9999999999999LL)
+    {
 
         d0 = codigo_barra % 10;
         codigo_barra /= 10;
