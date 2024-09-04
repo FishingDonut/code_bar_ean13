@@ -7,7 +7,7 @@ int main()
     long long codigo_barra;
     int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0;
 
-    cout << "Digite o code" << endl;
+    cout << "Digite o Codigo de Barras." << endl;
     cin >> codigo_barra;
 
     if (codigo_barra > 0 and codigo_barra < 9999999999999LL) {
