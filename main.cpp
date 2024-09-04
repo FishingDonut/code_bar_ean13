@@ -8,14 +8,13 @@ int main()
     long long codigo_barra;
     int d12, d11, d10, d9, d8, d7, d6, d5, d4, d3, d2, d1, d0, total, digito_verificador;
 
-    // passa a instrução ao usuario
+    // passa a instruçao ao usuario
     cout << "Digite o Codigo de Barras." << endl;
     cin >> codigo_barra;
 
     // verifica o tamanho do codigo de barras passado
     if (codigo_barra > 0 and codigo_barra <= 9999999999999LL)
     {
-
         // Usa o modulo para pegar o ultimo digito da direita e divide a operaçao em 10 para retirar o ultimo digito da direita
         d0 = codigo_barra % 10;
         codigo_barra /= 10;
